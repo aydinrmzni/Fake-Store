@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./assets/style/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  </head>
+
+  <body class="bg-gray-100 select-none">
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-16 min-h-screen">
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-8">Admin Panel</h1>
+        <div class="admin-panel">
+          <!-- Sidebar -->
+          <div class="admin-sidebar pr-4">
+            <ul class="space-y-4">
+              <li>
+                <button class="tab-btn w-full text-left py-2 px-4 bg-blue-500 text-white rounded" data-target="products">Products</button>
+              </li>
+              <li>
+                <button class="tab-btn w-full text-left py-2 px-4 bg-gray-200 text-gray-700 rounded" data-target="categories">Categories</button>
+              </li>
+              <li>
+                <button class="tab-btn w-full text-left py-2 px-4 bg-gray-200 text-gray-700 rounded" data-target="carts">Carts</button>
+              </li>
+              <li>
+                <button class="tab-btn w-full text-left py-2 px-4 bg-gray-200 text-gray-700 rounded" data-target="users">Users</button>
+              </li>
+            </ul>
+          </div>
+          <!-- Content -->
+          <div id="adminContent" class="admin-content pl-4">
+            <!-- Products -->
+            <div id="products" class="tab-content active">
+              <h2 class="text-xl font-bold mb-4">Products</h2>
+              <table class="min-w-full bg-white mb-4">
+                <thead>
+                  <tr>
+                    <th class="py-2 px-4 border-b border-gray-300">ID</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Title</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Price</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Category</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Sample Product Rows -->
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-300">1</td>
+                    <td class="py-2 px-4 border-b border-gray-300">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</td>
+                    <td class="py-2 px-4 border-b border-gray-300">$109.95</td>
+                    <td class="py-2 px-4 border-b border-gray-300">men's clothing</td>
+                    <td class="py-2 px-4 border-b border-gray-300">
+                      <button class="update-product bg-blue-500 text-white py-1 px-2 rounded">Edit</button>
+                      <button class="delete-prodcut bg-red-500 text-white py-1 px-2 rounded">Delete</button>
+                    </td>
+                  </tr>
+                  <!-- Repeat for more products -->
+                </tbody>
+              </table>
+              <div class="form-actions">
+                <button id="add-product" class="bg-green-500 text-white py-2 px-4 rounded">Add Product</button>
+              </div>
+            </div>
+            <!-- Categories -->
+            <div id="categories" class="tab-content">
+              <h2 class="text-xl font-bold mb-4">Categories</h2>
+              <table class="min-w-full bg-white mb-4">
+                <thead>
+                  <tr>
+                    <th class="py-2 px-4 border-b border-gray-300">Category</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Sample Category Rows -->
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-300">electronics</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-300">jewelery</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-300">men's clothing</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-300">women's clothing</td>
+                  </tr>
+                  <!-- Repeat for more categories -->
+                </tbody>
+              </table>
+            </div>
+            <!-- Carts -->
+            <div id="carts" class="tab-content">
+              <h2 class="text-xl font-bold mb-4">Carts</h2>
+              <table class="min-w-full bg-white mb-4">
+                <thead>
+                  <tr>
+                    <th class="py-2 px-4 border-b border-gray-300">Cart ID</th>
+                    <th class="py-2 px-4 border-b border-gray-300">User ID</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Date</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Products</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Sample Cart Rows -->
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-300">5</td>
+                    <td class="py-2 px-4 border-b border-gray-300">3</td>
+                    <td class="py-2 px-4 border-b border-gray-300">2020-03-01</td>
+                    <td class="py-2 px-4 border-b border-gray-300">Product ID: 7, Quantity: 1<br />Product ID: 8, Quantity: 1</td>
+                    <td class="py-2 px-4 border-b border-gray-300">
+                      <button class="update-cart bg-blue-500 text-white py-1 px-2 rounded">Edit</button>
+                      <button class="delete-cart bg-red-500 text-white py-1 px-2 rounded">Delete</button>
+                    </td>
+                  </tr>
+                  <!-- Repeat for more carts -->
+                </tbody>
+              </table>
+              <div class="form-actions">
+                <button id="add-cart" class="bg-green-500 text-white py-2 px-4 rounded">Add Cart</button>
+              </div>
+            </div>
+            <!-- Users -->
+            <div id="users" class="tab-content">
+              <h2 class="text-xl font-bold mb-4">Users</h2>
+              <table class="min-w-full bg-white mb-4">
+                <thead>
+                  <tr>
+                    <th class="py-2 px-4 border-b border-gray-300">User ID</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Name</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Email</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Phone</th>
+                    <th class="py-2 px-4 border-b border-gray-300">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Sample User Rows -->
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-300">1</td>
+                    <td class="py-2 px-4 border-b border-gray-300">John Doe</td>
+                    <td class="py-2 px-4 border-b border-gray-300">john@gmail.com</td>
+                    <td class="py-2 px-4 border-b border-gray-300">1-570-236-7033</td>
+                    <td class="py-2 px-4 border-b border-gray-300">
+                      <button class="update-user bg-blue-500 text-white py-1 px-2 rounded">Edit</button>
+                      <button class="delete-user bg-red-500 text-white py-1 px-2 rounded">Delete</button>
+                    </td>
+                  </tr>
+                  <!-- Repeat for more users -->
+                </tbody>
+              </table>
+              <div class="form-actions">
+                <button id="add-user" class="bg-green-500 text-white py-2 px-4 rounded">Add User</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-lg">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-2xl font-bold">Add New Product</h2>
+          <button class="text-gray-600 hover:text-gray-800" onclick="toggleModal('addProductModal')">&times;</button>
+        </div>
+        <form id="addProductForm">
+          <div class="mb-4">
+            <label for="productTitle" class="block text-gray-700">Title</label>
+            <input type="text" id="productTitle" name="title" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="productPrice" class="block text-gray-700">Price</label>
+            <input type="number" id="productPrice" name="price" class="w-full p-2 border border-gray-300 rounded mt-1" step="0.01" required />
+          </div>
+          <div class="mb-4">
+            <label for="productDescription" class="block text-gray-700">Description</label>
+            <textarea id="productDescription" name="description" class="w-full p-2 border border-gray-300 rounded mt-1" required></textarea>
+          </div>
+          <div class="mb-4">
+            <label for="productImage" class="block text-gray-700">Image URL</label>
+            <input type="url" id="productImage" name="image" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="productCategory" class="block text-gray-700">Category</label>
+            <input type="text" id="productCategory" name="category" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="flex justify-end">
+            <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded mr-2" onclick="toggleModal('addProductModal')">Cancel</button>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add Product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Update Product Modal -->
+    <div id="updateProductModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-lg">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-2xl font-bold">Update Product</h2>
+          <button class="text-gray-600 hover:text-gray-800" onclick="toggleModal('updateProductModal')">&times;</button>
+        </div>
+        <form id="updateProductForm">
+          <div class="mb-4">
+            <label for="updateProductTitle" class="block text-gray-700">Title</label>
+            <input type="text" id="updateProductTitle" name="title" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="updateProductPrice" class="block text-gray-700">Price</label>
+            <input type="number" id="updateProductPrice" name="price" class="w-full p-2 border border-gray-300 rounded mt-1" step="0.01" required />
+          </div>
+          <div class="mb-4">
+            <label for="updateProductDescription" class="block text-gray-700">Description</label>
+            <textarea id="updateProductDescription" name="description" class="w-full p-2 border border-gray-300 rounded mt-1" required></textarea>
+          </div>
+          <div class="mb-4">
+            <label for="updateProductImage" class="block text-gray-700">Image URL</label>
+            <input type="url" id="updateProductImage" name="image" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="updateProductCategory" class="block text-gray-700">Category</label>
+            <input type="text" id="updateProductCategory" name="category" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="flex justify-end">
+            <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded mr-2" onclick="toggleModal('updateProductModal')">Cancel</button>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update Product</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add Cart Modal -->
+    <div id="addCartModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-lg">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-2xl font-bold">Add New Cart</h2>
+          <button class="text-gray-600 hover:text-gray-800" onclick="toggleModal('addCartModal')">&times;</button>
+        </div>
+        <form id="addCartForm">
+          <div class="mb-4">
+            <label for="cartUser" class="block text-gray-700">User</label>
+            <select id="cartUser" name="userId" class="w-full p-2 border border-gray-300 rounded mt-1" required>
+              <!-- Example options, replace with dynamic content -->
+              <option value="1">John Doe (ID: 1)</option>
+              <option value="2">Jane Smith (ID: 2)</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label for="cartDate" class="block text-gray-700">Date</label>
+            <input type="date" id="cartDate" name="date" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="cartProducts" class="block text-gray-700">Products</label>
+            <div id="cartProducts" class="space-y-2">
+              <!-- Example product entry, replace with dynamic content -->
+              <div class="flex items-center space-x-2">
+                <select name="products[0][productId]" class="w-full p-2 border border-gray-300 rounded" required>
+                  <!-- Example options, replace with dynamic content -->
+                  <option value="1">Product 1 (ID: 1)</option>
+                  <option value="2">Product 2 (ID: 2)</option>
+                </select>
+                <input type="number" name="products[0][quantity]" class="w-20 p-2 border border-gray-300 rounded" min="1" value="1" required />
+              </div>
+            </div>
+            <button type="button" class="mt-2 text-blue-500" onclick="addProductField()">+ Add Another Product</button>
+          </div>
+          <div class="flex justify-end">
+            <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded mr-2" onclick="toggleModal('addCartModal')">Cancel</button>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Add Cart</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Update Cart Modal -->
+    <div id="updateCartModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-lg">
+        <div class="flex justify-between items-center">
+          <h2 class="text-2xl font-bold mb-4">Update Cart</h2>
+          <button class="text-gray-600 hover:text-gray-800" onclick="toggleModal('updateCartModal')">×</button>
+        </div>
+        <form id="updateCartForm">
+          <div class="mb-4">
+            <label for="update-user" class="block text-gray-700">User</label>
+            <select id="update-user" class="w-full p-2 border border-gray-300 rounded mt-1">
+              <!-- Options will be dynamically populated with JS -->
+            </select>
+          </div>
+          <div class="mb-4">
+            <label for="update-date" class="block text-gray-700">Date</label>
+            <input type="date" id="update-date" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div id="update-products-section" class="mb-4">
+            <!-- Product items will be dynamically populated with JS -->
+            <div class="mb-2">
+              <label for="product-1" class="block text-gray-700">Product</label>
+              <select id="product-1" class="w-full p-2 border border-gray-300 rounded mt-1">
+                <!-- Product options will be dynamically populated with JS -->
+              </select>
+              <label for="quantity-1" class="block text-gray-700 mt-2">Quantity</label>
+              <input type="number" id="quantity-1" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+            </div>
+            <!-- Add more products as needed -->
+          </div>
+          <div class="flex justify-end">
+            <button type="button" class="bg-gray-500 text-white px-4 py-2 rounded mr-2" onclick="toggleModal('updateCartModal')">Cancel</button>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update Cart</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div id="addUserModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-3xl relative">
+        <button onclick="toggleModal('addUserModal')" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+        <h2 class="text-2xl font-bold mb-4">Add New User</h2>
+        <form id="addUserForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label for="user-email" class="block text-gray-700">Email</label>
+            <input type="email" id="user-email" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="user-username" class="block text-gray-700">Username</label>
+            <input type="text" id="user-username" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="user-password" class="block text-gray-700">Password</label>
+            <input type="password" id="user-password" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="user-firstname" class="block text-gray-700">First Name</label>
+            <input type="text" id="user-firstname" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="user-lastname" class="block text-gray-700">Last Name</label>
+            <input type="text" id="user-lastname" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="user-city" class="block text-gray-700">City</label>
+            <input type="text" id="user-city" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="user-street" class="block text-gray-700">Street</label>
+            <input type="text" id="user-street" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="user-number" class="block text-gray-700">Street Number</label>
+            <input type="number" id="user-number" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="user-zipcode" class="block text-gray-700">Zip Code</label>
+            <input type="text" id="user-zipcode" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="user-lat" class="block text-gray-700">Latitude</label>
+            <input type="text" id="user-lat" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="user-long" class="block text-gray-700">Longitude</label>
+            <input type="text" id="user-long" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4 col-span-full">
+            <label for="user-phone" class="block text-gray-700">Phone</label>
+            <input type="text" id="user-phone" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="col-span-full flex justify-end">
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Add User</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Update User Modal -->
+    <div id="updateUserModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-3xl relative">
+        <button onclick="toggleModal('updateUserModal')" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">&times;</button>
+        <h2 class="text-2xl font-bold mb-4">Update User</h2>
+        <form id="updateUserForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="mb-4">
+            <label for="update-user-email" class="block text-gray-700">Email</label>
+            <input type="email" id="update-user-email" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="update-user-username" class="block text-gray-700">Username</label>
+            <input type="text" id="update-user-username" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="update-user-password" class="block text-gray-700">Password</label>
+            <input type="password" id="update-user-password" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="update-user-firstname" class="block text-gray-700">First Name</label>
+            <input type="text" id="update-user-firstname" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="update-user-lastname" class="block text-gray-700">Last Name</label>
+            <input type="text" id="update-user-lastname" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="update-user-city" class="block text-gray-700">City</label>
+            <input type="text" id="update-user-city" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="update-user-street" class="block text-gray-700">Street</label>
+            <input type="text" id="update-user-street" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="update-user-number" class="block text-gray-700">Street Number</label>
+            <input type="number" id="update-user-number" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="update-user-zipcode" class="block text-gray-700">Zip Code</label>
+            <input type="text" id="update-user-zipcode" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="update-user-lat" class="block text-gray-700">Latitude</label>
+            <input type="text" id="update-user-lat" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4">
+            <label for="update-user-long" class="block text-gray-700">Longitude</label>
+            <input type="text" id="update-user-long" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="mb-4 col-span-full">
+            <label for="update-user-phone" class="block text-gray-700">Phone</label>
+            <input type="text" id="update-user-phone" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+          </div>
+          <div class="col-span-full flex justify-end">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update User</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="./assets/script/main.js"></script>
+  </body>
+</html>

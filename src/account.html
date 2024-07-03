@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="./assets/style/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 select-none">
+  <!-- Main Content -->
+  <div class="container mx-auto px-4 py-16 min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg">
+      <h1 class="text-2xl font-bold mb-8">User Dashboard</h1>
+      <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-1/4 pr-4">
+          <ul class="space-y-4">
+            <li>
+              <button class="tab-btn w-full text-left py-2 px-4 bg-blue-500 text-white rounded" data-target="profile">Profile</button>
+            </li>
+            <li>
+              <button class="tab-btn w-full text-left py-2 px-4 bg-gray-200 text-gray-700 rounded" data-target="orders">Order History</button>
+            </li>
+            <li>
+              <button class="tab-btn w-full text-left py-2 px-4 bg-gray-200 text-gray-700 rounded" data-target="addresses">Saved Addresses</button>
+            </li>
+            <li>
+              <button class="tab-btn w-full text-left py-2 px-4 bg-gray-200 text-gray-700 rounded" data-target="payment">Payment Methods</button>
+            </li>
+            <li>
+              <button class="tab-btn w-full text-left py-2 px-4 bg-gray-200 text-gray-700 rounded" data-target="settings">Account Settings</button>
+            </li>
+          </ul>
+        </div>
+        <!-- Content -->
+        <div class="w-3/4 pl-4">
+          <!-- Profile -->
+          <div id="profile" class="tab-content active">
+            <h2 class="text-xl font-bold mb-4">Profile Information</h2>
+            <form id="profile-form">
+              <div class="mb-4">
+                <label for="profile-firstname" class="block text-gray-700">First Name</label>
+                <input type="text" id="profile-firstname" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+              </div>
+              <div class="mb-4">
+                <label for="profile-lastname" class="block text-gray-700">Last Name</label>
+                <input type="text" id="profile-lastname" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+              </div>
+              <div class="mb-4">
+                <label for="profile-email" class="block text-gray-700">Email</label>
+                <input type="email" id="profile-email" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+              </div>
+              <div class="mb-4">
+                <label for="profile-phone" class="block text-gray-700">Phone</label>
+                <input type="text" id="profile-phone" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+              </div>
+              <div class="mb-4">
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Update Profile</button>
+              </div>
+            </form>
+          </div>
+          <!-- Orders -->
+          <div id="orders" class="tab-content">
+            <h2 class="text-xl font-bold mb-4">Order History</h2>
+            <table class="min-w-full bg-white">
+              <thead>
+                <tr>
+                  <th class="py-2 px-4 border-b border-gray-300">Order ID</th>
+                  <th class="py-2 px-4 border-b border-gray-300">Date</th>
+                  <th class="py-2 px-4 border-b border-gray-300">Total</th>
+                  <th class="py-2 px-4 border-b border-gray-300">Status</th>
+                  <th class="py-2 px-4 border-b border-gray-300">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Sample Order -->
+                <tr>
+                  <td class="py-2 px-4 border-b border-gray-300">#12345</td>
+                  <td class="py-2 px-4 border-b border-gray-300">2023-07-01</td>
+                  <td class="py-2 px-4 border-b border-gray-300">$99.99</td>
+                  <td class="py-2 px-4 border-b border-gray-300">Delivered</td>
+                  <td class="py-2 px-4 border-b border-gray-300">
+                    <button class="text-blue-500">View</button>
+                  </td>
+                </tr>
+                <!-- Repeat for more orders -->
+              </tbody>
+            </table>
+          </div>
+          <!-- Addresses -->
+          <div id="addresses" class="tab-content">
+            <h2 class="text-xl font-bold mb-4">Saved Addresses</h2>
+            <div class="space-y-4">
+              <!-- Sample Address -->
+              <div class="p-4 border border-gray-300 rounded">
+                <div class="flex justify-between items-center">
+                  <div>
+                    <div class="font-bold">John Doe</div>
+                    <div>123 Main St, Anytown, USA</div>
+                    <div>john.doe@example.com</div>
+                    <div>(123) 456-7890</div>
+                  </div>
+                  <button class="text-red-500"><i class="fas fa-trash"></i></button>
+                </div>
+              </div>
+              <!-- Repeat for more addresses -->
+            </div>
+          </div>
+          <!-- Payment Methods -->
+          <div id="payment" class="tab-content">
+            <h2 class="text-xl font-bold mb-4">Payment Methods</h2>
+            <div class="space-y-4">
+              <!-- Sample Payment Method -->
+              <div class="p-4 border border-gray-300 rounded">
+                <div class="flex justify-between items-center">
+                  <div>
+                    <div class="font-bold">Visa **** 1234</div>
+                    <div>Expiry: 12/23</div>
+                  </div>
+                  <button class="text-red-500"><i class="fas fa-trash"></i></button>
+                </div>
+              </div>
+              <!-- Repeat for more payment methods -->
+            </div>
+          </div>
+          <!-- Account Settings -->
+          <div id="settings" class="tab-content">
+            <h2 class="text-xl font-bold mb-4">Account Settings</h2>
+            <form>
+              <div class="mb-4">
+                <label for="settings-password" class="block text-gray-700">Change Password</label>
+                <input type="password" id="settings-password" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+              </div>
+              <div class="mb-4">
+                <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Update Password</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./assets/script/main.js"></script>
+</body>
+</html>
