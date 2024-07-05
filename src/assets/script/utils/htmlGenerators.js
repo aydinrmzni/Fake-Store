@@ -16,3 +16,65 @@ export function generateProductCardHTML(product) {
     </div>
   `;
 }
+
+/**
+ * Generate HTML for a cart card.
+ * @param {object} product - The product data.
+ * @param {number} quantity - The quantity of the product.
+ * @returns {string} - the HTML string for the cart card.
+ */
+export function generateCartCardHTML(product, quantity) {
+  return `
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <img src="${product.image}" alt="Product Image" class="w-12 h-12 rounded">
+        <div class="ml-4">
+          <div class="text-lg font-bold">${product.title}</div>
+          <div class="text-gray-600">$${product.price}</div>
+          <div class="flex items-center mt-2">
+            <button class="text-gray-500"><i class="fas fa-minus"></i></button>
+            <input type="number" class="w-12 mx-2 text-center border rounded" value="${quantity}" min="1">
+            <button class="text-gray-500"><i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </div>
+      <button class="text-red-500"><i class="fas fa-trash"></i></button>
+    </div>
+  `;
+}
+
+/**
+ * Generate HTML for a cart card.
+ * @param {object} product - The product data.
+ * @param {number} quantity - The quantity of the product.
+ * @returns {string} - the HTML string for the cart card.
+ */
+export function generateTableCartHTML(product, quantity) {
+  return `
+    <tr class="border-t">
+      <td class="py-4">
+        <img src="${product.image}" alt="Product Image" class="w-12 h-12 rounded" />
+      </td>
+      <td class="py-4">${product.title}</td>
+      <td class="py-4">${product.category}</td>
+      <td class="py-4">
+        <div class="flex items-center">
+          <button class="text-gray-500">
+            <i class="fas fa-minus"></i>
+          </button>
+          <input type="number" class="w-12 mx-2 text-center border rounded" value="${quantity}" min="1" />
+          <button class="text-gray-500">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </td>
+      <td class="py-4">$${product.price}</td>
+      <td class="py-4">$${product.price}</td>
+      <td class="py-4">
+        <button class="text-red-500">
+          <i class="fas fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  `;
+}

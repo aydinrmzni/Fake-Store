@@ -13,7 +13,7 @@
     <header class="bg-white shadow-md">
       <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <div class="text-2xl font-bold">
-          <a href="#">LOGO</a>
+          <a href="#">Fake Store</a>
         </div>
         <div class="flex items-center space-x-6">
           <div id="userIcon" class="relative inline-block text-left">
@@ -34,9 +34,9 @@
             <a href="#" class="text-gray-600">
               <i class="fas fa-shopping-cart"></i>
             </a>
-            <span class="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex justify-center items-center">0</span>
+            <span id="cartQuantity" class="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex justify-center items-center">0</span>
           </div>
-          <span class="text-gray-600">$0.00</span>
+          <span id="cartTotal" class="text-gray-600">$0.00</span>
         </div>
       </div>
     </header>
@@ -45,24 +45,8 @@
     <div id="shopping-cart" class="fixed top-0 right-0 w-9/12 sm:w-6/12 md:w-6/12 lg:w-3/12 h-full bg-white shadow-lg transform translate-x-full">
       <div class="p-4">
         <h2 class="text-xl font-bold mb-4">Shopping Cart</h2>
-        <div class="space-y-4">
-          <!-- Sample cart item -->
-          <div class="flex items-center justify-between">
-            <div class="flex items-center">
-              <img src="https://via.placeholder.com/50" alt="Product Image" class="w-12 h-12 rounded" />
-              <div class="ml-4">
-                <div class="text-lg font-bold">Product Name</div>
-                <div class="text-gray-600">$10.00</div>
-                <div class="flex items-center mt-2">
-                  <button class="text-gray-500"><i class="fas fa-minus"></i></button>
-                  <input type="number" class="w-12 mx-2 text-center border rounded" value="1" min="1" />
-                  <button class="text-gray-500"><i class="fas fa-plus"></i></button>
-                </div>
-              </div>
-            </div>
-            <button class="text-red-500"><i class="fas fa-trash"></i></button>
-          </div>
-          <!-- Repeat for more items -->
+        <div id="cartItemList" class="space-y-4">
+          <!-- HTML generate with javascript -->
         </div>
         <div class="mt-6">
           <a href="./checkout.html" class="block text-center w-full bg-blue-500 text-white py-2 rounded">Checkout</a>

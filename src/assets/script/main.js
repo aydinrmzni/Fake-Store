@@ -6,6 +6,7 @@ import {initializeCart} from './components/cartUI.js';
 import {renderProducts} from './components/productsUI.js';
 import {handleLogin} from './models/auth.js';
 import {toggleDropDown} from './components/userLogin.js';
+import { handleCart } from './models/cart.js';
 
 // Add an event listener to the document that runs when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {

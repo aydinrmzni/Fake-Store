@@ -164,7 +164,7 @@ function lockPage() {
   const authPagePath = '/src/auth.html';
 
   // List of pages that should be locked if the user is not logged in
-  const protectedPages = ['/src/checkout.html', '/src/account.html'];
+  const protectedPages = ['/src/checkout.html', '/src/account.html', '/src/cart.html'];
 
   // Check if the current path is in the list of protected pages and the user is not logged in
   if (protectedPages.includes(currentPath) && !userLoggedIn) {
