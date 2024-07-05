@@ -10,8 +10,8 @@
 
   <body class="bg-gray-100 select-none">
     <!-- Main Content -->
-    <div class="container mx-auto px-4 py-16 flex justify-center items-center min-h-screen">
-      <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+    <div class="container mx-auto px-4 py-16 flex justify-center items-center h-svh">
+      <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg h-full">
         <div class="flex justify-center mb-8">
           <button id="login-toggle" class="w-1/2 text-center py-2 font-bold text-blue-500 border-b-2 border-blue-500">Login</button>
           <button id="signup-toggle" class="w-1/2 text-center py-2 font-bold text-gray-500 border-b-2">Signup</button>
@@ -24,14 +24,14 @@
         <div class="form-container">
           <!-- Login Form -->
           <div id="login-content" class="toggle-content active">
-            <form>
+            <form id="loginForm">
               <div class="mb-4">
                 <label for="login-email" class="block text-gray-700">Email</label>
-                <input type="email" id="login-email" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+                <input type="email" id="login-email" name="login-email" class="w-full p-2 border border-gray-300 rounded mt-1" required />
               </div>
               <div class="mb-4">
                 <label for="login-password" class="block text-gray-700">Password</label>
-                <input type="password" id="login-password" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+                <input type="password" id="login-password" name="login-password" class="w-full p-2 border border-gray-300 rounded mt-1" required />
               </div>
               <div class="mb-4">
                 <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded">Login</button>
@@ -40,24 +40,38 @@
           </div>
           <!-- Signup Form -->
           <div id="signup-content" class="toggle-content">
-            <form>
+            <form id="signupForm">
               <div class="mb-4">
-                <label for="signup-name" class="block text-gray-700">Name</label>
-                <input type="text" id="signup-name" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+                <label for="signup-fname" class="block text-gray-700">First Name</label>
+                <input type="text" id="signup-fname" name="signup-fname" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+              </div>
+              <div class="mb-4">
+                <label for="signup-lname" class="block text-gray-700">Last Name</label>
+                <input type="text" id="signup-lname" name="signup-lname" class="w-full p-2 border border-gray-300 rounded mt-1" required />
               </div>
               <div class="mb-4">
                 <label for="signup-email" class="block text-gray-700">Email</label>
-                <input type="email" id="signup-email" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+                <input type="email" id="signup-email" name="signup-email" class="w-full p-2 border border-gray-300 rounded mt-1" required />
               </div>
               <div class="mb-4">
                 <label for="signup-password" class="block text-gray-700">Password</label>
-                <input type="password" id="signup-password" class="w-full p-2 border border-gray-300 rounded mt-1" required />
+                <input type="password" id="signup-password" name="signup-password" class="w-full p-2 border border-gray-300 rounded mt-1" required />
               </div>
               <div class="mb-4">
                 <button type="submit" class="w-full bg-green-500 text-white py-2 rounded">Signup</button>
               </div>
             </form>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="formMessageModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-md">
+        <span id="closeButton" class="text-gray-500 hover:text-gray-800 cursor-pointer text-xl float-right" onclick="toggleModal('formMessageModal')">&times;</span>
+        <div class="flex items-center justify-center">
+          <i id="formMessageIcon" class="fa mr-3 text-2xl"></i>
+          <p id="formMessageText" class="text-lg font-semibold"></p>
         </div>
       </div>
     </div>

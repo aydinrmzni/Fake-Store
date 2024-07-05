@@ -16,9 +16,20 @@
           <a href="#">LOGO</a>
         </div>
         <div class="flex items-center space-x-6">
-          <a href="./auth.html" class="text-gray-600">
-            <i class="fas fa-user"></i>
-          </a>
+          <div id="userIcon" class="relative inline-block text-left">
+            <a href="javascript:" class="relative text-gray-600 flex items-center">
+              <i class="fas fa-user"></i>
+              <span id="userWelcome" class="hidden ml-2"></span>
+            </a>
+            <div id="accountDropDownMenu" class="hidden absolute -right-1/2 mt-6 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <img src="./assets/image/user-avatar.png" alt="User Icon" class="w-8 h-8 rounded-full mt-2 ml-3 mb-3" />
+              <div class="flex flex-col" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                <a href="./account.html" class="px-4 py-2 block text-sm text-gray-700 hover:bg-gray-200 transition-all ease-out" role="menuitem">Account</a>
+                <a href="javascript:" class="logout px-4 py-2 block text-sm text-red-500 hover:bg-gray-200 transition-all ease-out" role="menuitem">Logout</a>
+              </div>
+            </div>
+          </div>
+
           <div id="cart-icon" class="relative">
             <a href="#" class="text-gray-600">
               <i class="fas fa-shopping-cart"></i>

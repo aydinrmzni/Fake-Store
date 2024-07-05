@@ -11,7 +11,7 @@ export function generateProductCardHTML(product) {
         <div class="text-sm text-gray-500">${product.category}</div>
         <div class="text-lg font-bold">${product.title}</div>
         <div class="text-xl text-gray-800">$${product.price}</div>
-        <button class="mt-4 w-full bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Add to Cart</button>
+        <button data-id="${product.id}" class="add-to-cart mt-4 w-full bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Add to Cart</button>
       </div>
     </div>
   `;

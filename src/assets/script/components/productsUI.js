@@ -12,6 +12,5 @@ export async function renderProducts() {
   (await getProduct(0, 0)).forEach((product) => {
     productCardHTML += generateProductCardHTML(product); // Generate HTML for each product and append it to the string
   });
-
-  productGridElm.innerHTML = productCardHTML; // Set the inner HTML of the product grid element
+  productGridElm && (productGridElm.innerHTML = productCardHTML); // Set the inner HTML of the product grid element
 }
