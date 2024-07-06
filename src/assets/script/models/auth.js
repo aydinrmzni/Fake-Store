@@ -163,8 +163,14 @@ function lockPage() {
   // Define the path to the authentication page
   const authPagePath = '/src/auth.html';
 
+  // Define the path to the admin page
+  const adminPagePath = '/src/admin.html';
+
+  // Define the path to the admin page
+  const accountPagePath = '/src/account.html';
+
   // List of pages that should be locked if the user is not logged in
-  const protectedPages = ['/src/checkout.html', '/src/account.html', '/src/cart.html'];
+  const protectedPages = ['/src/checkout.html', '/src/account.html', '/src/cart.html', '/src/admin.html'];
 
   // Check if the current path is in the list of protected pages and the user is not logged in
   if (protectedPages.includes(currentPath) && !userLoggedIn) {
@@ -176,6 +182,22 @@ function lockPage() {
   if (userLoggedIn && authPagePath.includes(currentPath)) {
     // If the user is logged in and on the authentication page, redirect to the account page
     window.location.href = 'account.html';
+  }
+
+  // Check if the user is logged in and the current path is the account page
+  if (userLoggedIn && accountPagePath.includes(currentPath)) {
+    // If the logged in user is admin (Admin Username: jimmie_k)
+    if (userLoggedIn.username === 'jimmie_k') {
+      window.location.href = 'admin.html';
+    }
+  }
+
+  // Check if the user is logged in and the current path is the admin page
+  if (userLoggedIn && adminPagePath.includes(currentPath)) {
+    // If the logged in user is not admin
+    if (userLoggedIn.username !== 'jimmie_k') {
+      window.location.href = 'account.html';
+    }
   }
 }
 
