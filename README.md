@@ -13,8 +13,7 @@ Welcome to Fake Store, a demo e-commerce platform using Fake Store API Services 
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact Information](#contact-information)
-- [Acknowledgements](#acknowledgements)
-
+  
 ## Installation
 
 ### Prerequisites
