@@ -38,17 +38,6 @@ Welcome to Fake Store, a demo e-commerce platform using Fake Store API Services 
    npm run dev
    \`\`\`
 
-## Usage
-
-Once the development server is running, open your browser and navigate to \`http://localhost:3000\`. You can browse products, add items to your cart, and simulate the checkout process.
-
-### Example
-
-\`\`\`sh
-# To build the project for production
-npm run build
-\`\`\`
-
 ## Pages
 
 - **Index.html**: Contains the header with user login icon, cart icon for a quick look at the cart, and a product grid with product cards fetched from the API.
