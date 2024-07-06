@@ -25,18 +25,16 @@ Welcome to Fake Store, a demo e-commerce platform using Fake Store API Services 
 ### Steps
 
 1. Clone the repository:
-   \`\`\`sh
+
+   ```sh
    git clone https://github.com/aydinrmzni/fake-store.git
    cd fake-store
-   \`\`\`
-2. Install dependencies:
-   \`\`\`sh
+3. Install dependencies:
+   ```sh
    npm install
-   \`\`\`
-3. Start the development server:
-   \`\`\`sh
+4. Start the development server:
+   ```sh
    npm run dev
-   \`\`\`
 
 ## Pages
 
