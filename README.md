@@ -3,17 +3,6 @@
 
 Welcome to Fake Store, a demo e-commerce platform using Fake Store API Services ([Fake Store API](https://fakestoreapi.com/docs)). This project showcases a fully functional fake store website with multiple pages and features.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Pages](#pages)
-- [Features](#features)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact Information](#contact-information)
-
 ## Installation
 
 ### Prerequisites
